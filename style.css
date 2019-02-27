@@ -1,0 +1,20 @@
+/* CSS files add styling rules to your content */
+
+body {
+  font-family: 'Rubik', sans-serif;
+
+  margin: 2em;
+}
+
+h1 {
+  font-style: italic;
+  color: #373fff;
+}
+
+#map {
+  position: relative;
+  height: 100vh;
+  width: 99%;
+/*   border-style: outset;
+  border-color: black; */
+}
