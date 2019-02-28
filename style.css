@@ -15,6 +15,34 @@ h1 {
   position: relative;
   height: 100vh;
   width: 99%;
-/*   border-style: outset;
-  border-color: black; */
+  border-style: outset;
+  border-color: black;
+}
+
+.only-phone {
+  display: none;
+}
+
+.not-phone {
+  display: block;
+}
+
+@media (max-width: 1024px) {
+  body {
+    background-color: #9ECCD3;
+  }
+}
+
+@media (max-width: 400px) {
+  body {
+    background-color: #FEFCF0;
+  }
+  
+  .not-phone {
+    display: none;
+  }
+  
+  .only-phone {
+    display: block;
+  }
 }

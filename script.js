@@ -8,7 +8,7 @@ L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_M
   maxZoom: 20
 }).addTo(map);
 
-fetch('https://cdn.glitch.com/c4800747-940d-4b1d-95ec-5b931ad404e4%2FNew_York_City_Baseball_Stadiums.json?1550539366281')
+fetch('https://cdn.glitch.com/c4800747-940d-4b1d-95ec-5b931ad404e4%2FNew_York_City_Baseball_Stadiums_new.geojson?1551314908507')
   .then(function (response) {
     // Read data as JSON
     return response.json();
