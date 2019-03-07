@@ -1,48 +1,44 @@
 // This isn't necessary but it keeps the editor from thinking L is a typo
-/* global L */
+/* global L, Mustache */
 
 var map = L.map('map').setView([34.03, -82.20], 5);
 
-// Add base layer
-L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
+var popupTemplate = document.querySelector('.popup-template').innerHTML;
+
+L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_nolabels/{z}/{x}/{y}.png', {
   maxZoom: 20
 }).addTo(map);
 
 fetch('https://cdn.glitch.com/c4800747-940d-4b1d-95ec-5b931ad404e4%2FNew_York_City_Baseball_Stadiums_new.geojson?1551314908507')
   .then(function (response) {
-    // Read data as JSON
     return response.json();
   })
   .then(function (data) {
-    // Create the Leaflet layer for the data 
     var baseballStadiums = L.geoJson(data, {
-      
-      // We make the points circles instead of markers so we can style them
       pointToLayer: function (geoJsonPoint, latlng) {
         return L.circleMarker(latlng);
       },
-      
-      // Then we can style them as we would other features
       style: function (geoJsonFeature) {
         return {
-          fillColor: '#4C004C',
+          fillColor: '#221BBB',
           radius: 6  ,
           fillOpacity: 1,
           stroke: false,
-          // stroke: 0.02,
-          // color: '#2b2a2a',
-        };
-      }
+      };
+    },
+      onEachFeature: function (feature, layer) {
+        layer.on('click', function () {
+        console.log(layer.feature.properties);  
+      var sidebarContentArea = document.querySelector('.sidebar-content');
+          console.log(sidebarContentArea);
+          sidebarContentArea.innerHTML = Mustache.render(popupTemplate, layer.feature.properties);
     });
-  
-    // Add data to the map
-    baseballStadiums.addTo(map);
-  
-  //   // Move the map view so that the baseballStadiums is visible
-    map.fitBounds(baseballStadiums.getBounds());
-  });
+    },
+    });
+      baseballStadiums.addTo(map);
+      map.fitBounds(baseballStadiums.getBounds());
+    });
 
-// disable map zoom when using scroll
 if (map.scrollWheelZoom) {
   map.scrollWheelZoom.disable();
 }
