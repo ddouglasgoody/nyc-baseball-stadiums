@@ -3,46 +3,99 @@
 body {
   font-family: 'Rubik', sans-serif;
 
-  margin: 2em;
+  margin: 1.5em;
 }
 
 h1 {
-  font-style: italic;
-  color: #373fff;
+  font-weight: bold;
+  color: black;
 }
 
 #map {
   position: relative;
   height: 100vh;
-  width: 99%;
+  width: 75%;
+  float: left;
   border-style: outset;
+  border-width: thin;
   border-color: black;
 }
 
-.only-phone {
-  display: none;
+/* .container {
+  position: relative;
+  padding:10px;
+  top:0px;
+  right: 0;
+  left: 0;
+  height: 1200px;
+  display: inline-block
+} */
+
+.sidebar {
+  height: 100vh;
+  float: left;
+  width: 20%;
+}
+
+.sidebar-content {
+/*   padding-left: 20%; */
+  float: left;
+}
+
+.sidebar-stadium {
+  font-weight: bold;
+}
+
+.sidebar-team {
+  font-style: oblique;
+}
+
+.sidebar-year {
+  font-style: oblique;
+  font-size: x-small;
+  font-family: 'Roboto', sans-serif;
+}
+
+.sidebar-image {
+  width: 100%;
+  height: 220px
+}
+
+.sidebar-image img {
+  width: 100%;
+  height: auto;
+}
+
+
+
+
+
+
+
+/* .only-phone {
+/*   display: none;
 }
 
 .not-phone {
   display: block;
 }
-
-@media (max-width: 1024px) {
+ */
+/* @media (max-width: 1024px) {
   body {
     background-color: #9ECCD3;
   }
-}
+} */
 
-@media (max-width: 400px) {
+/* @media (max-width: 400px) {
   body {
     background-color: #FEFCF0;
-  }
+  } */
   
-  .not-phone {
+/*   .not-phone {
     display: none;
   }
-  
-  .only-phone {
+   */
+/*   .only-phone {
     display: block;
   }
-}
+} */
