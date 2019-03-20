@@ -1,101 +1,199 @@
-/* CSS files add styling rules to your content */
-
 body {
-  font-family: 'Rubik', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  margin: 0.5em;
+/*   background-image: url("https://github.com/ddouglasgoody/nyc-baseball-stadiums/blob/master/infield.png?raw=true"); */
+  background-color: #191918;
+}
 
-  margin: 1.5em;
+a {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color: #DADADA;
 }
 
 h1 {
+/*   font-weight: bold; */
+  font-family: 'Fugaz One', cursive;
+  font-size: 38px;
+  color: #FFFEFB;
+}
+
+h2 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  color: #FFFEFB;
+}
+
+h3 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color: #FFFEFB;
+}
+
+h4 {
+  font-family: 'Rubik', sans-serif;
   font-weight: bold;
-  color: black;
+  font-size: 20px;
+  color: #FFFEFB;
+}
+
+h5 {
+  font-family: 'Fugaz One', cursive;
+  font-size: 24px;
+  color: #FFFEFB;
 }
 
 #map {
   position: relative;
   height: 100vh;
-  width: 75%;
+  width: 100%;
   float: left;
   border-style: outset;
   border-width: thin;
-  border-color: black;
+  border-color: gray;
 }
-
-/* .container {
-  position: relative;
-  padding:10px;
-  top:0px;
-  right: 0;
-  left: 0;
-  height: 1200px;
-  display: inline-block
-} */
 
 .sidebar {
-  height: 100vh;
-  float: left;
-  width: 20%;
+  display: inline-block;
+  position: relative;
+  width: 20vw;
+  top: 10px;
+  left: 10px;
+  z-index: 5001;
+  padding: 10px;
+  background: rgba(128,128,128,0.8);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  text-align: center;
+/*   font-size: 1vw; */
 }
 
-.sidebar-content {
-/*   padding-left: 20%; */
+/* .sidebar {
+  display: none;
+  height: 100vh;
   float: left;
+  width: 25%;
+  background-color: #FFFEFB;
+  position: fixed;
 }
+ */
+/* .sidebar-content {
+  float: left;
+} */
 
 .sidebar-stadium {
   font-weight: bold;
+  font-family: 'Fugaz One', cursive;
+  font-size: 21px;
+  color: #191918;
 }
 
 .sidebar-team {
-  font-style: oblique;
+  font-family: 'Rubik', sans-serif;
+  font-weight: bold;
 }
 
 .sidebar-year {
   font-style: oblique;
-  font-size: x-small;
+  font-size: 12px;
   font-family: 'Roboto', sans-serif;
 }
 
 .sidebar-image {
   width: 100%;
-  height: 220px
-}
-
-.sidebar-image img {
-  width: 100%;
   height: auto;
 }
 
-
-
-
-
-
-
-/* .only-phone {
-/*   display: none;
+.sidebar-image img {
+  width: 98%;
+  height: auto;
 }
 
-.not-phone {
-  display: block;
+.overlay {
+  position: absolute;
+  float: left;
+  top: 0;
+  right: 0;
+  padding: 5px;
+  background: transparent;
+  z-index: 500;
 }
- */
-/* @media (max-width: 1024px) {
-  body {
-    background-color: #9ECCD3;
-  }
+
+#sourcesBtn {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    z-index: 500;
+}
+
+.sourceOverlay {
+  display: none;
+  margin: auto;
+  position: fixed;
+  float: left;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  padding: 5px;
+  background-color: rgba(0,0,51,0.9);
+  z-index: 5005;
+  cursor: pointer;
+  text-align: center;
+}
+
+.sourceOverlay .sourceText {
+  margin-top: 0;
+  font-size: 1vw;
+}
+
+/* .sourceOverlay .sourceText h1 {
+  display: none;
+  height: 4vw;
+  margin-top: 4vh;
 } */
 
-/* @media (max-width: 400px) {
-  body {
-    background-color: #FEFCF0;
-  } */
-  
-/*   .not-phone {
-    display: none;
-  }
-   */
-/*   .only-phone {
-    display: block;
-  }
-} */
+.btn {
+  font-size: small;
+  font-weight: normal;
+  font-family: 'Rubik', sans-serif;
+  border: none; 
+  color: black; 
+  padding: 2px 4px; 
+  cursor: pointer; 
+  background-color: #AEAEAE;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  box-shadow: 4px 4px 10px black;
+}
+
+.btn:hover {
+  background-color: DarkGray;
+  box-shadow: 2px 2px 5px black;
+}
+
+.title-text-box {
+  background: transparent;
+  padding: 5px;
+  text-align: center;
+  max-width: 750px;
+  margin-top: 0px;
+  margin-right: auto;
+  margin-bottom: 0px;
+  margin-left: auto;
+}
+
+.home-button {
+/*   position: absolute;
+  float: left;
+  top: 0;
+  right: 0;
+  padding: 5px;
+  background: transparent;
+  z-index: 500; */
+  position: relative;
+  bottom: 15px;
+  right: 15px;
+  z-index: 10;
+  transition-duration: .3s;
+}

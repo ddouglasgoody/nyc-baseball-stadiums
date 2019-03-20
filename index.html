@@ -1,43 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>ddg-final-project-draft</title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,900|Rubik:400,400i,500" rel="stylesheet">
-
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Baseball Stadiums of NYC</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://api.mapbox.com/mapbox.js/v3.2.0/mapbox.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,900|Rubik:400,400i,500" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Fugaz+One" rel="stylesheet">
+<div class="title-text-box">
+  <h1>
+    <center>Baseball Stadiums of New York City<br>Past & Present</center>
+  </h1>
+  <h2>
+    <center>
+      A map for those interested in the current and historic baseball stadiums of New York City.<br>
+      <em><small>(Stadiums currently in-use appear in red on the map.)</small></em>
     
-        <!-- Load Leaflet CSS -->
-    <link href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" rel="stylesheet">
-    
-    <!-- Load our styles -->
-    <link href="./style.css" rel="stylesheet">
-
-  </head>  
-  <body>
-    <h1 class="not-phone">
-      <center>NYC Baseball Stadiums (WORKING DRAFT)</center>
-    </h1>
-<!--     <h2 class="only-phone">
-      NYC Baseball Stadiums (WORKING DRAFT)
-    </h2> -->
-    <div id="map"></div>
-    
-<!--     <div class="container"> -->
+    </center>
+  </h2>
+</div>
+<body>
+<div id="map">
+  <div class="overlay">
     <div class="sidebar">
       <div class="sidebar-content"></div>
     </div>
-<!--     </div> -->
     
     <script class="popup-template" type="x-tmpl-mustache">
       <div>
-        <h2 class="sidebar-stadium">{{stadium}}</h2>
-        <div class="sidebar-team">{{team}}</div>
-        <div class="sidebar-year">{{year_built}}</div>
-        <div class="sidebar-image"><img src="{{photo_url}}"></div>
+        <center><div class="sidebar-stadium">{{stadium}}</div></center><br>
+        <center><div class="sidebar-team">{{team}}</div></center><br>
+        <center><div class="sidebar-year">{{year_built}}</div></center><br>
+        <center><div class="sidebar-image"><img src="{{photo_url}}"></div></center><br>
       </div>
     </script>
+<!--       <select class="stad-picker">
+        <option value="">Choose a Stadium</option>
+        <option value="Capitoline Grounds">Capitoline Grounds</option>
+        <option value="Carroll Park">Carroll Park</option>
+        <option value="Citi Field">Citi Field</option>
+        <option value="Dexter Park">Dexter Park</option>
+        <option value="Dyckman Oval">Dyckman Oval</option>
+        <option value="Eastern Park">Eastern Park</option>
+        <option value="Ebbets Field">Ebbets Field</option>
+        <option value="Erasmus Field II">Erasmus Field II</option>
+      </select> -->
+  </div>
+  <div>
+    <button class="btn" id="sourcesBtn">About</button>
+    <button class="home-button">Home</button>
+  </div>
+</div>
+
+
+<div id="sourcesOver" class="sourceOverlay" onclick="sourcesOverOff()" style="display: block;">
+      <h5>
+        (Click Anywhere to Return to Map)
+      </h5>
+    <div class="sourceText">
+      <h4>
+        <em>About</em>
+      </h4>
+      <h3>
+        <p>
+          The purpose of this map, really, is to indulge my love of both baseball and nostalgia. When I moved to New York City almost two decades ago, I became enamored with the history sitting alongside the every-changing present.<br>Overall, my goal for this map is simple: to show both the current and a select group of historic stadiums throughout New York City. These stadiums include both major and minor league teams, as well as <a href="https://www.britannica.com/sports/Negro-league" target="blank">other professional leagues</a>.<br><br>In making this map, my hope is simply to showcase the location of these stadiums through New York City, along with some basic information,including<br>the teams that played there, the stadium's build date (and end date), and a photograph or representative picture, all of which were found using internet sources (see below).<br>Enjoy this baseball tour of New York City...let's play ball!
+      </p>
+      <h4>
+        <em>Data Sources</em>
+      </h4>
+      <h3>
+        <p>
+          I used a variety of web resources to track down both information and photographs of these stadiums, past and present.
+          <br>The majority of the information came from <a href="http://BrooklynBallParks.com" target="blank">BrooklynBallParks.com</a>.
+        </p>
+        <ul>
+          Other sources include:
+          <li><a href="http://maps.nyc.gov/doitt/nycitymap/" target="blank">NYCityMap</a></li>
+          <li><a href="https://www.wikipedia.org/" target="blank">Wikipedia</a></li>
+          <li><a href="https://www.cbssports.com" target="blank">CBS Sports</a></li>
+        </ul>
+      </h3>
+      <h4>
+        <br><em>Site Author</em>
+      </h4>
+      <h3>
+        This webpage was created by Danny Goodman, to serve as the final project for SAVI 780, instructed by Eric Brelsford, Winter 2019, Pratt Institute.
+      </h3>
+    </div>
+  </div>
+    
+</body>
+
+
     
     <!-- Load Leaflet library -->
     <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"></script>
@@ -53,5 +108,12 @@
     
     <!-- Load our JavaScript -->
     <script src="./script.js"></script>
-  </body>
+   
+        <!-- Load Leaflet CSS -->
+    <link href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" rel="stylesheet">
+    
+    <!-- Load our styles -->
+    <link href="./style.css" rel="stylesheet">
+
+</head> 
 </html>
