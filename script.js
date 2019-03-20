@@ -12,7 +12,7 @@ L.tileLayer('https://api.mapbox.com/styles/v1/ddouglasgoody/cjt51r9e52vh31fnzfxn
   maxZoom: 15
 }).addTo(map);
 
-fetch('https://cdn.glitch.com/c4800747-940d-4b1d-95ec-5b931ad404e4%2Fnyc_baseball_stadiums_20190318.geojson?1552950475220')
+fetch('https://cdn.glitch.com/c4800747-940d-4b1d-95ec-5b931ad404e4%2Fnyc_baseball_stadiums_20190320.geojson?1553086432292')
   .then(function (response) {
     return response.json();
   })
@@ -50,6 +50,14 @@ fetch('https://cdn.glitch.com/c4800747-940d-4b1d-95ec-5b931ad404e4%2Fnyc_basebal
           sidebarContentArea.innerHTML = Mustache.render(popupTemplate, layer.feature.properties);
     });
     },
+      onEachFeature: function (feature, layer) {
+        layer.on('click', function () {
+        console.log(layer.feature.properties);  
+      var sidebarContentArea = document.querySelector('.sidebar-content');
+          console.log(sidebarContentArea);
+          sidebarContentArea.innerHTML = Mustache.render(popupTemplate, layer.feature.properties);
+    });
+    },
     });
       baseballStadiums.addTo(map);
       map.fitBounds(baseballStadiums.getBounds());
@@ -76,14 +84,14 @@ fetch('https://cdn.glitch.com/c4800747-940d-4b1d-95ec-5b931ad404e4%2Fnyc_basebal
 //   console.log(stadPicker.value)
 // });
 
+function sourcesOverOff() {
+  document.getElementById("sourcesOver").style.display = "none";
+};
+
 var sourcesBtn = document.querySelector('#sourcesBtn');
 sourcesBtn.addEventListener('click', function() {
   document.getElementById("sourcesOver").style.display = "block";
 });
-
-function sourcesOverOff() {
-  document.getElementById("sourcesOver").style.display = "none";
-};
 
 var homeButton = document.querySelector('.home-button');
 homeButton.addEventListener('click', function () {

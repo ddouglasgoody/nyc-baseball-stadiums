@@ -54,32 +54,18 @@ h5 {
 }
 
 .sidebar {
-  display: inline-block;
+  display: block;
   position: relative;
   width: 20vw;
   top: 10px;
   left: 10px;
   z-index: 5001;
-  padding: 10px;
+  padding: 0px;
   background: rgba(128,128,128,0.8);
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 5px;
   text-align: center;
-/*   font-size: 1vw; */
 }
-
-/* .sidebar {
-  display: none;
-  height: 100vh;
-  float: left;
-  width: 25%;
-  background-color: #FFFEFB;
-  position: fixed;
-}
- */
-/* .sidebar-content {
-  float: left;
-} */
 
 .sidebar-stadium {
   font-weight: bold;
@@ -105,7 +91,7 @@ h5 {
 }
 
 .sidebar-image img {
-  width: 98%;
+  width: 95%;
   height: auto;
 }
 
@@ -184,16 +170,15 @@ h5 {
 }
 
 .home-button {
-/*   position: absolute;
-  float: left;
-  top: 0;
-  right: 0;
-  padding: 5px;
-  background: transparent;
-  z-index: 500; */
-  position: relative;
-  bottom: 15px;
-  right: 15px;
-  z-index: 10;
+  position: absolute;
+  margin-top: 7.5vh;
+  margin-bottom: 2vh;
+  margin-left: 0.5vh;
+  padding: 2px 4px; 
+  cursor: pointer; 
+  background: white;
+/*   bottom: 25px;
+  right: 100px; */
+  z-index: 500;
   transition-duration: .3s;
 }
